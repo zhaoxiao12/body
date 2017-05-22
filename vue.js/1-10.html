@@ -1,31 +1,35 @@
+
 <!DOCTYPE HTML>
 <html ng-app="myApp">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>无标题文档</title>
-<script src="angular.min.js"></script>
-<script type="text/javascript">
-  var myFirst=angular.module('myApp',[]);
-
-  myFirst.controller('Aaa',['$scope','$filter',function($scope,$filter){
-    //$scope.name='12434343434343434434';
-    //$scope.name = 'hello';
-//    $scope.name = 'hello';
-    $scope.name=[
-            '11111','22222','3333'
-    ]
-  }])
-
-</script>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
 </head>
 <body>
-  <div ng-controller='Aaa'>
-  	<!--<p>{{name | currency:'￥'}}</p>-->
-
-    <!--<p>{{ name | number : 0 }}</p>-->
-    <!--<p>{{ name | uppercase }}</p>-->
-    <pre>{{name | json }}</pre>
+  <div id='app'>
+  	{{message}}
+  	<p v-if='seven' v-on:click='revers(show)'>现在看见了</p>
   </div>
-
 </body>
+
+
+<script type="text/javascript">
+  var app = new Vue({
+  el: '#app',
+  data: {
+    message: 'Hello Vue!',
+    seven:true,
+    
+  }, 
+  methods:{
+  	revers:function(show){
+  		if(show==true){
+  			alert(1)
+  		}
+  	}
+  }
+})
+ 
+</script>
 </html>
